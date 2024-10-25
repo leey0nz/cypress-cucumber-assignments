@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "moduleResolution": "node16",
+    "target": "ES2017",
+    "module": "CommonJS",
+    "types": [
+      "node",
+      "cypress"
+    ],
+    "paths": {
+      "@/*": [
+        "./cypress/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+}

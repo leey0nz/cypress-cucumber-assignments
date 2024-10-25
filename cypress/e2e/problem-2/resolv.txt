@@ -1,0 +1,58 @@
+2-1. Describe the question you would like to ask the stakeholder and the reason.
+
+Question:
+
+ • What specific functions or features are restricted for each role (Admin, General User)?
+
+Reason:
+
+ • This question is essential to clarify the exact permissions of each role. It helps prevent the scenario where General Users could access critical functions that should be reserved for Admins. By defining these restrictions clearly, it ensures that the scope of testing aligns with role-based access control, and it verifies that the permission system is working correctly.
+
+2-2. Create test perspectives and scenarios.
+
+Test Perspectives:
+
+ 1. Role-based Access Control (RBAC):
+ • Ensure that each role can only access the functions they are authorized for.
+ 2. Functionality for Admins:
+ • Verify that Admins have access to all functions, including adding, editing, deleting users, and managing roles.
+ 3. Functionality for General Users:
+ • Ensure that General Users can only access limited functions and cannot modify system-level permissions or critical data.
+ 4. Role Allocation and Permissions:
+ • Verify that the Admin can assign roles to other users, and these roles function as expected.
+ 5. Security and Error Handling:
+ • Ensure that when users attempt to access unauthorized functions, the system blocks the attempt and provides an appropriate error message.
+
+Test Scenarios:
+
+ 1. Scenario 1: Admin can access all functions
+ • Precondition: Admin account is logged in.
+ • Action: Attempt to access all available functions, such as creating, editing, deleting users, and allocating roles.
+ • Expected Result: Admin should be able to perform all actions without any restrictions.
+ 2. Scenario 2: General user cannot access Admin functions
+ • Precondition: General User account is logged in.
+ • Action: Attempt to access restricted functions like adding or deleting users.
+ • Expected Result: General User should be denied access to these functions, and an appropriate error message should be displayed.
+ 3. Scenario 3: Admin can allocate roles
+ • Precondition: Admin account is logged in.
+ • Action: Admin tries to assign roles to different users.
+ • Expected Result: Admin should be able to successfully assign roles, and the changes should be reflected in the system.
+ 4. Scenario 4: Role restrictions work after allocation
+ • Precondition: Admin assigns the General User role to a new user.
+ • Action: The newly assigned General User attempts to access Admin-level functions.
+ • Expected Result: The General User should be restricted from accessing Admin-level functions.
+ 5. Scenario 5: Administrator can add/delete other users
+ • Precondition: Admin account is logged in.
+ • Action: Admin adds a new user and later deletes that user.
+ • Expected Result: Admin should successfully add and delete users, and these actions should be immediately reflected in the system.
+
+2-3. Estimate the number of man-hours required for testing.
+
+Estimated Man-Hours:
+
+ • Test case creation: 6-8 hours (Writing detailed test cases covering both Admin and General User functionalities).
+ • Test execution: 10-12 hours (Executing test cases across various scenarios and ensuring role-based permissions work as intended).
+ • Bug reporting and retesting: 4-6 hours (Documenting any issues discovered during testing and retesting after fixes).
+ • Documentation and review: 2-4 hours (Summarizing test results, logging findings, and reviewing the overall testing process).
+
+Total estimated time: 22-30 man-hours, depending on the complexity of the system and the number of issues encountered during testing.
